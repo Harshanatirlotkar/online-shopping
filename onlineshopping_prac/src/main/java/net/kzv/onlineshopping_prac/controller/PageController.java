@@ -10,15 +10,31 @@ import org.springframework.web.servlet.ModelAndView;
 public class PageController {
 
 	@RequestMapping(value = { "/", "/home", "/index" })
-
 	public ModelAndView index() {
 
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting", "welcome to spring mvc");
+		mv.addObject("title", "Home");
+		mv.addObject("userClickedHome",true);
 		return mv;
 	}
 	
+	@RequestMapping(value ="/about")
+	public ModelAndView about() {
+
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "About us");
+		mv.addObject("userClickedAbout",true);
+		return mv;
+	}
 	
+	@RequestMapping(value ="/contact")
+	public ModelAndView cantact() {
+
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Contact us");
+		mv.addObject("userClickedContact",true);
+		return mv;
+	}
 //	@RequestMapping(value ="/test")
 //	public ModelAndView test (@RequestParam( value="greeting", required=false) String greeting) {
 //		if(greeting == null)
